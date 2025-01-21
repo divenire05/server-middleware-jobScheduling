@@ -13,3 +13,7 @@ Content-Type: application/json
 
 ###
 PUT http://localhost:4000/api/?word=divenire&banana=ripe
+
+
+###
+DELETE http://localhost:4000/delete/6/neat

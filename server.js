@@ -30,8 +30,9 @@ app.put('/api', (req, res) => {
     res.sendStatus(200)
 })
 
-app.delete('/delete/:id', (req, res) => {
-    console.log('What do you want to delete?')
+app.delete('/delete/:id/:name', (req, res) => {
+    const {id, name} = req.params 
+    console.log('What do you want to delete?', id, name)
     res.sendStatus(200)
 })
 
