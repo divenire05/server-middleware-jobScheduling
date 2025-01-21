@@ -30,6 +30,11 @@ app.put('/api', (req, res) => {
     res.sendStatus(200)
 })
 
+
+app.delete('/delete/divenire/cool', (req, res) => {
+    res.send('Didnt make it')
+})
+
 app.delete('/delete/:id/:name', (req, res) => {
     const {id, name} = req.params 
     console.log('What do you want to delete?', id, name)
