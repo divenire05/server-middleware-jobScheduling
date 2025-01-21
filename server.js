@@ -25,6 +25,21 @@ const db = []
 
 
 // scheduler
+function cron(ms, fn) {
+    async function cb() {
+        clearTimeout(timeout)
+        await fn()
+        timeout = setTimeout(cb, ms)
+    }
+    let timeout = setTimeout(cb, ms)
+    return () => {
+
+    }
+}
+function consoleDB() {
+    console.log('DB= ', db)
+}
+cron(1000, consoleDB)
 
 
 // Cannot override express.static since it serves index.html to GET request from default home route
