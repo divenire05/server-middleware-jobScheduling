@@ -5,16 +5,18 @@ const PORT = 4000
 
 // middleware
 app.use(express.json())
+app.use(express.static('public'))
 
 
 // temp database
 const db = []
 
 
-app.get('/', (req, res) => {
-    console.log('You have reached the home route: GET')
-    res.status(200).send({"message": "Hi mom"})
-})
+// Cannot override express.static since it serves index.html to GET request from default home route
+// app.get('/', (req, res) => {
+//     console.log('You have reached the home route: GET')
+//     res.sendStatus(200)
+// })
 
 app.post('/api/info', (req, res) => {
     const {information} = req.body
