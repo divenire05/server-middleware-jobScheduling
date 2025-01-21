@@ -6,6 +6,7 @@ const PORT = 4000
 // middleware
 app.use(express.json())
 app.use(express.static('public'))
+app.use(require('cors')())
 
 
 // temp database
