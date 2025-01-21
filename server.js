@@ -25,8 +25,8 @@ app.post('/api/info', (req, res) => {
 })
 
 app.put('/api', (req, res) => {
-    const {information} = req.body
-    console.log(information)
+    const {word, banana} = req.query
+    console.log(word, banana)
     res.sendStatus(200)
 })
 
